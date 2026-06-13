@@ -22,13 +22,38 @@ body{
     justify-content:center;
     align-items:center;
 
-    background:#020b0a;
+    background-image:url("soldado.jpg");
+    background-size:cover;          /* ocupa toda a tela */
+    background-position:center;     /* centraliza */
+    background-repeat:no-repeat;
+    background-attachment:fixed;    /* fundo fixo */
 
     color:white;
     text-align:center;
 
     font-family:'Share Tech Mono', monospace;
+
+    overflow-x:hidden;
 }
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+
+    background:rgba(0,0,0,0.55);
+
+    z-index:-1;
+}
+
+    .profile-container{
+    position:relative;
+    z-index:1;
+
+    width:100%;
+    max-width:500px;
+    padding:20px;
+    }
 
 .profile-container{
     width:100%;
