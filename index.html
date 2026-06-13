@@ -35,20 +35,71 @@ body{
 
     overflow-x:hidden;
 }
-
+    
 body::before{
     content:"";
     position:fixed;
     inset:0;
 
-    background:rgba(0,0,0,0.55);
+    background:
+    repeating-linear-gradient(
+        to bottom,
+        rgba(255,180,0,0.04),
+        rgba(255,180,0,0.04) 1px,
+        transparent 2px,
+        transparent 5px
+    );
 
-    z-index:-1;
+    animation:scanFire 8s linear infinite;
+
+    pointer-events:none;
+    z-index:0;
 }
 
-    .profile-container{
+@keyframes scanFire{
+    from{
+        transform:translateY(-100px);
+    }
+    to{
+        transform:translateY(100px);
+    }
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    inset:0;
+
+    background:
+    linear-gradient(
+        180deg,
+        transparent,
+        rgba(255,140,0,0.08),
+        rgba(255,80,0,0.12),
+        transparent
+    );
+
+    animation:flameScan 5s linear infinite;
+
+    pointer-events:none;
+    z-index:0;
+
+    filter:blur(20px);
+}
+
+@keyframes flameScan{
+    0%{
+        transform:translateY(-100%);
+    }
+
+    100%{
+        transform:translateY(100%);
+    }
+}
+  
+.profile-container{
     position:relative;
-    z-index:1;
+    z-index:2;
 
     width:100%;
     max-width:500px;
@@ -303,9 +354,7 @@ h1{
     <a href="https://www.tiktok.com/@soldadodoceu2000"
     target="_blank"
     class="matrix-btn">
-
-      <i class="fa-brands fa-tiktok"></i>
-      Soldado do Céu
+      Soldado do Céu&nbsp;<i class="fa-brands fa-tiktok"></i>
     </a>
 
     <a href="https://drive.google.com/file/d/1BSbLyifd7EPpP_W9BXWL3zC_oNKyQgtn/view?usp=drive_link" class="matrix-btn">
