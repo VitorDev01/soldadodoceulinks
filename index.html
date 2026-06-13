@@ -169,17 +169,34 @@ body::before{
 
 h1{
     margin-top:25px;
-
     font-size:34px;
-
     color:#ffdd66;
-
     letter-spacing:2px;
 
     text-shadow:
         0 0 10px #ffcc00,
         0 0 20px #ff8800,
         0 0 35px #ff3300;
+
+    animation: pulseTitle 3s ease-in-out infinite;
+}
+
+@keyframes pulseTitle{
+    0%, 100%{
+        transform: scale(1);
+        text-shadow:
+            0 0 10px #ffcc00,
+            0 0 20px #ff8800,
+            0 0 35px #ff3300;
+    }
+
+    50%{
+        transform: scale(1.04);
+        text-shadow:
+            0 0 15px #ffdd44,
+            0 0 30px #ff9900,
+            0 0 45px #ff4400;
+    }
 }
 
 /* SUBTÍTULO */
@@ -282,6 +299,14 @@ h1{
     <p class="subtitle">
         Libertação - Cortes - Conteúdo Cristão
     </p>
+
+    <a href="https://www.tiktok.com/@soldadodoceu2000"
+    target="_blank"
+    class="matrix-btn">
+
+      <i class="fa-brands fa-tiktok"></i>
+      Soldado do Céu
+    </a>
 
     <a href="https://drive.google.com/file/d/1BSbLyifd7EPpP_W9BXWL3zC_oNKyQgtn/view?usp=drive_link" class="matrix-btn">
         E-book Drive&nbsp;<i class="fa-solid fa-book-bible"></i>
